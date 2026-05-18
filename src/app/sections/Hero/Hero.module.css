@@ -1,0 +1,137 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 255, 255, 0.1),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #0b2619 0%, #19553a 52%, #95b58a 100%);
+  color: white;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  padding: 88px 0 72px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.title {
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.02;
+  margin: 0;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  max-width: 760px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 720px;
+  margin: 22px 0 0;
+}
+
+.strong {
+  font-weight: 700;
+  color: white;
+  font-size: 20px;
+  margin: 12px 0 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Stat overrides for dark hero context */
+.btnPrimary {
+  background: white;
+  color: var(--green-900);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.btnSecondary {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.statFull {
+  grid-column: 1 / -1;
+}
+
+.value {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.label {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+}
+
+@media (max-width: 980px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .heroInner {
+    padding: 74px 0 58px;
+  }
+
+  .subtitle,
+  .strong {
+    font-size: 17px;
+  }
+
+  .value {
+    font-size: 34px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}

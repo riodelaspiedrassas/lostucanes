@@ -1,0 +1,20 @@
+.grid {
+	margin-top: 30px;
+}
+
+.cardImage {
+	height: 165px;
+	background:
+		linear-gradient(135deg, rgba(24, 82, 56, 0.25), rgba(255, 255, 255, 0.2)),
+		linear-gradient(135deg, #dae8d7, #f0efe8 60%, #dfe7d6);
+	overflow: hidden;
+}
+
+.cardImageOverlay {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	object-fit: cover;
+}
