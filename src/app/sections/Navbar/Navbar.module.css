@@ -1,0 +1,201 @@
+/* ── Barra de navegación ─────────────────────── */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+/* ── Brand ───────────────────────────────────── */
+
+.brandTitle {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--green-900);
+  line-height: 1;
+}
+
+.brandSub {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ── Desktop links ───────────────────────────── */
+
+.navLinks {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+  color: #374151;
+  font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navLinks a:hover {
+  color: var(--green-800);
+}
+
+/* ── Hamburger button ────────────────────────── */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.hamburger:hover {
+  background: rgba(18, 53, 36, 0.07);
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--green-900);
+  border-radius: 2px;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animación X al abrir */
+.barTop {
+  transform: translateY(7px) rotate(45deg);
+}
+.barMid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.barBot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Overlay ─────────────────────────────────── */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.overlayVisible {
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+
+/* ── Drawer mobile ───────────────────────────── */
+
+.drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 95;
+  width: min(300px, 82vw);
+  height: 100dvh;
+  background: white;
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0 32px;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 28px;
+  gap: 4px;
+}
+
+.drawerLink {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transform: translateX(16px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    color 0.15s ease;
+}
+
+/* Cuando el drawer está abierto, los links aparecen */
+.drawerOpen .drawerLink {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.drawerLink:last-child {
+  border-bottom: none;
+}
+
+.drawerLink:hover {
+  color: var(--green-800);
+}
+
+.drawerFooter {
+  padding: 0 28px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 720px) {
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  /* El drawer usa display:flex siempre, solo se mueve con transform */
+}

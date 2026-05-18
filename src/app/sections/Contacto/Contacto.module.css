@@ -1,0 +1,80 @@
+.contactBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  background: var(--dark);
+  color: white;
+  border-radius: 32px;
+  padding: 34px;
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.18);
+}
+
+.kicker {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #9ad0aa;
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 19px;
+  max-width: 520px;
+  margin-top: 18px;
+}
+
+.quote {
+  margin-top: 20px;
+  padding: 20px 22px;
+  border-radius: 22px;
+  font-size: 20px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contactItem {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.small {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.big {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.ctaBtn {
+  background: white;
+  color: var(--green-900);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 980px) {
+  .contactBox {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .contactBox {
+    padding: 24px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+}
