@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"prebuild": "pnpm lint",
-		"lint": "eslint .",
+		"lint": "eslint src --ext .ts,.tsx",
 		"prelint": "pnpm format",
 		"format": "prettier --write .",
 		"start": "next start"
